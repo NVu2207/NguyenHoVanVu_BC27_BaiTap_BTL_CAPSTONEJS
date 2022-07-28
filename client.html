@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/client.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="link">
+          <button type="button" class="btn btn-danger">
+            <a href="./index.html">SEVER</a>
+          </button>
+          <i
+            class="fa-solid fa-cart-arrow-down"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          ></i>
+        </div>
+      </div>
+      <div class="row">
+        <select id="selectType" class="form-select" onchange="selectType()">
+          <option value="">Chọn Dòng Điện Thoại</option>
+          <option value="A">Ai Phôn</option>
+          <option value="B">Sam Sung</option>
+        </select>
+      </div>
+      <div class="row" id="tbody"></div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-striped table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Tên Sản Phẩm</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Số Lượng</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Tổng</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyProduct"></tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <p id="Sum">Tổng cộng:</p>
+              <div class="buT">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Hủy
+                </button>
+                <button type="button" class="btn btn-primary" onclick="pay()">
+                  Thanh Toán
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./app/models/product.js"></script>
+    <script src=" ./app/models/cartItem.js"></script>
+    <script src="./app/services/productAPI.js"></script>
+
+    <script src="./app/controllers/client.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+.container .row{
+    margin: 20px;
+}
+.container .row .fa-solid{
+    float: right;
+    font-size: 30px;
+}
+.modal-footer{
+    justify-content: space-between;
+}
